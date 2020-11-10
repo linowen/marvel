@@ -1,24 +1,517 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="tG8-pZ-gV6">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Avengers-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="marvel" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="3D_Avengers" translatesAutoresizingMaskIntoConstraints="NO" id="6HW-6R-aiZ">
+                                <rect key="frame" x="-220" y="95" width="814" height="349"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="labelColor"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="首頁" image="homekit" catalog="system" id="wJg-ui-pbO"/>
+                    <navigationItem key="navigationItem" title="Avengers" id="NKl-Zq-sHr"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="364" y="-677"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="QXT-Ig-amW">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="tG8-pZ-gV6" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="PjL-Sy-261">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="I6J-pi-Thg"/>
+                        <segue destination="Y6K-KD-Xjr" kind="relationship" relationship="viewControllers" id="kwd-dR-o7x"/>
+                        <segue destination="8Jf-NI-X4O" kind="relationship" relationship="viewControllers" id="Cyv-eI-sOo"/>
+                        <segue destination="q0K-tS-ZEK" kind="relationship" relationship="viewControllers" id="aHI-06-Pve"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sjV-66-Ncz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1770" y="1540"/>
+        </scene>
+        <!--電影-->
+        <scene sceneID="uxA-aR-7io">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Y6K-KD-Xjr" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="電影" image="video" catalog="system" id="WV9-3g-ZGh"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="GKl-8X-XZo">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="qgb-AC-Fmr" kind="relationship" relationship="rootViewController" id="Dnk-F3-nNC"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yH3-3C-Dxh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="364" y="73"/>
+        </scene>
+        <!--電影列表-->
+        <scene sceneID="GvS-cz-uxV">
+            <objects>
+                <tableViewController id="qgb-AC-Fmr" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="p6s-id-6DA">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <sections>
+                            <tableViewSection id="AzU-dz-Rt9">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" alpha="0.0" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="150" id="DUD-ZP-vcH">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="150"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="DUD-ZP-vcH" id="A5g-3f-6WR">
+                                            <rect key="frame" x="0.0" y="0.0" width="348" height="150"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="A1" translatesAutoresizingMaskIntoConstraints="NO" id="T8O-Xj-pVj">
+                                                    <rect key="frame" x="25" y="6" width="101" height="139"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="復仇者聯盟" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nje-Ue-wWl">
+                                                    <rect key="frame" x="149" y="65" width="87" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="DOZ-f3-vZo" kind="show" id="LwD-Ew-vbc"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" alpha="0.0" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="150" id="NAf-nl-co9">
+                                        <rect key="frame" x="0.0" y="178" width="375" height="150"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="NAf-nl-co9" id="t9t-pq-e8b">
+                                            <rect key="frame" x="0.0" y="0.0" width="348" height="150"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="A2" translatesAutoresizingMaskIntoConstraints="NO" id="zTq-5p-EFQ">
+                                                    <rect key="frame" x="25" y="6" width="101" height="139"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ios-xX-G9R">
+                                                    <rect key="frame" x="149" y="65" width="184" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <string key="text">復仇者聯盟2：奧創紀元
+</string>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" alpha="0.0" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="150" id="MaT-h3-GJ2">
+                                        <rect key="frame" x="0.0" y="328" width="375" height="150"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="MaT-h3-GJ2" id="otu-iP-BvW">
+                                            <rect key="frame" x="0.0" y="0.0" width="348" height="150"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="A3" translatesAutoresizingMaskIntoConstraints="NO" id="gQF-bH-S9w">
+                                                    <rect key="frame" x="25" y="6" width="101" height="139"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ogz-K3-zNQ">
+                                                    <rect key="frame" x="149" y="65" width="174" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <string key="text">復仇者聯盟：無限之戰
+</string>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" alpha="0.0" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="150" id="7lj-Sa-qvb">
+                                        <rect key="frame" x="0.0" y="478" width="375" height="150"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7lj-Sa-qvb" id="j6W-bl-Lo8">
+                                            <rect key="frame" x="0.0" y="0.0" width="348" height="150"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="A4" translatesAutoresizingMaskIntoConstraints="NO" id="WZ9-Tq-AKz">
+                                                    <rect key="frame" x="25" y="6" width="101" height="139"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4zV-Dk-9Xw">
+                                                    <rect key="frame" x="149" y="65" width="174" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <string key="text">復仇者聯盟：終局之戰
+</string>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="qgb-AC-Fmr" id="Fzx-1y-7qp"/>
+                            <outlet property="delegate" destination="qgb-AC-Fmr" id="mfL-kc-ohm"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="電影列表" id="IIP-FS-LQO"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Ma-vd-gvm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1349.5999999999999" y="71.514242878560722"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="y2R-M7-tdB">
+            <objects>
+                <viewController id="DOZ-f3-vZo" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="W7a-aY-eyz">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="A1b" translatesAutoresizingMaskIntoConstraints="NO" id="dEq-LG-n0Y">
+                                <rect key="frame" x="16" y="72" width="343" height="126"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="劇情" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MBe-z2-jo5">
+                                <rect key="frame" x="16" y="227" width="35" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" systemColor="systemBackgroundColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JoY-1E-5er">
+                                <rect key="frame" x="16" y="260" width="334" height="332"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yNZ-O0-uC8">
+                                        <rect key="frame" x="8" y="8" width="318" height="316"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" systemColor="labelColor"/>
+                                        <attributedString key="attributedText">
+                                            <fragment content="宇宙魔方自從於">
+                                                <attributes>
+                                                    <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <font key="NSFont" size="20" name=".PingFangTC-Regular"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content="1942">
+                                                <attributes>
+                                                    <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <font key="NSFont" size="20" name=".SFNS-Regular"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment>
+                                                <string key="content">年時被人類發現後針對其展開過無數次探索，棲息於宇宙中的強大外星勢力也從此開始盯住地球，被牠們營救的洛基負責率領齊塔瑞軍團。在地球，由神盾局建立的一所科研基地中，進行著神盾局與太空總署以及美國空軍合作的「天馬項目」，試圖提煉出魔方能量加以利用，但卻造成魔方能量數值持續攀升。資深探員菲爾</string>
+                                                <attributes>
+                                                    <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <font key="NSFont" size="20" name=".PingFangTC-Regular"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content="·">
+                                                <attributes>
+                                                    <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <font key="NSFont" size="20" name=".SFNS-Regular"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content="考森和瑪莉亞">
+                                                <attributes>
+                                                    <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <font key="NSFont" size="20" name=".PingFangTC-Regular"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content="·">
+                                                <attributes>
+                                                    <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <font key="NSFont" size="20" name=".SFNS-Regular"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content="希爾受尼克">
+                                                <attributes>
+                                                    <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <font key="NSFont" size="20" name=".PingFangTC-Regular"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content="·">
+                                                <attributes>
+                                                    <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <font key="NSFont" size="20" name=".SFNS-Regular"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content="福瑞局長的命令疏散整座基地，而魔方於地下實驗室自行開啓傳送門將洛基傳送過來。洛基殺光所有護衛後，用他手上的一把能灌輸能量的權杖，洗腦操縱住福瑞的親信克林特">
+                                                <attributes>
+                                                    <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <font key="NSFont" size="20" name=".PingFangTC-Regular"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content="·">
+                                                <attributes>
+                                                    <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <font key="NSFont" size="20" name=".SFNS-Regular"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content="巴頓，以及幫神盾局著手魔方項目的科學家艾瑞克">
+                                                <attributes>
+                                                    <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <font key="NSFont" size="20" name=".PingFangTC-Regular"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content="·">
+                                                <attributes>
+                                                    <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <font key="NSFont" size="20" name=".SFNS-Regular"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment>
+                                                <string key="content">賽維格，在他們的陪同下帶著魔方坐車逃離基地。沒過多久，流出的能量爆發造成基地完全坍塌，福瑞為了應對外來威脅而命令所有人備戰。
+
+考森相繼召來正在臥底的特工娜塔莎</string>
+                                                <attributes>
+                                                    <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <font key="NSFont" size="20" name=".PingFangTC-Regular"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content="·">
+                                                <attributes>
+                                                    <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <font key="NSFont" size="20" name=".SFNS-Regular"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content="羅曼諾夫、因為伽瑪射線變異的布魯斯">
+                                                <attributes>
+                                                    <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <font key="NSFont" size="20" name=".PingFangTC-Regular"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content="·">
+                                                <attributes>
+                                                    <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <font key="NSFont" size="20" name=".SFNS-Regular"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content="班納、剛解凍迎接現代不久的史蒂芬">
+                                                <attributes>
+                                                    <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <font key="NSFont" size="20" name=".PingFangTC-Regular"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content="·">
+                                                <attributes>
+                                                    <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <font key="NSFont" size="20" name=".SFNS-Regular"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content="羅傑斯、以及現居紐約的東尼">
+                                                <attributes>
+                                                    <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <font key="NSFont" size="20" name=".PingFangTC-Regular"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content="·">
+                                                <attributes>
+                                                    <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <font key="NSFont" size="20" name=".SFNS-Regular"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment>
+                                                <string key="content">史塔克。所有人共同來到神盾局的空中航母總部收聽簡報，但洛基當時自行現身在德國斯圖加特，走到廣場上讓市民對他下跪；實際上是派巴頓奪取一位著名醫學博士所擁有的稀有銥元素。史蒂芬、娜塔莎、東尼趕到現場聯手將他抓獲，洛基突然舉手投降後，三人開戰機折返回去航母。但索爾</string>
+                                                <attributes>
+                                                    <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <font key="NSFont" size="20" name=".PingFangTC-Regular"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content="·">
+                                                <attributes>
+                                                    <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <font key="NSFont" size="20" name=".SFNS-Regular"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment>
+                                                <mutableString key="content">奧丁森從天而降試圖帶走洛基，而幾個英雄在山區裡打一戰後，才互相調解達成共識並將洛基送回航母，讓洛基關入一個可以直落地面的牢籠讓他寸步難行。
+
+東尼認為神盾局在魔方計畫中隱瞞內幕，暗中安置程式破解一系列機密文件，發現計畫的第二階段是用魔方的能量大規模製造高科技武器。福瑞被迫講述因為索爾一年前在地球造成的災害，使他們為了應對其他外星敵類，不得已啟動這項草擬已久的防衛計畫。事實的揭露在他們之間引發不小的內槓時，巴頓靠追蹤到權杖位置後率軍攻入航母，炸毀航母渦輪引擎而整體開始下墜。因爆炸掉進底層的班納因為受傷以及積釀的憤怒情緒，失去自我變成浩克開始大肆破壞。為了防止班納將航母扯碎，尼克派遣一架戰鬥機進行攔截，浩克便跳出去砸爛戰鬥機，最後從空中直落地面才恢復成班納。
+
+巴頓被娜塔莎重擊頭部後恢複清醒，索爾誤入洛基的分身陷阱而反掉進籠子中，考森雖然拿著一把特殊能量武器趕到，卻也同樣中計而被洛基從背後刺穿胸膛。洛基將索爾的籠子扔出艦外後搭機逃跑，索爾於牢籠墜至地面的一刻逃出去，東尼全速推動引擎才挽救母艦。奄奄一息的考森希望他能以死來為眾人提供一點動力，最後死在福瑞的面前。所有人都因考森之死陷入悲憤，東尼立即飛回他在紐約市建立的史塔克大樓找到洛基。洛基本想去控制東尼，但對東尼的反應爐心臟毫無作用，一氣之下將東尼扔出窗外，所幸東尼及時換上他的最新七代戰甲而重回天空中。
+
+賽維格通過大樓的方舟核反應爐供能他完成的能量儀器，在紐約天空開啓一座連通太空的傳送門，在另一邊靜待的齊塔瑞軍團隨即穿過門降臨至紐約市破壞。市民們開始疏散時，史蒂芬、娜塔莎和恢複理智的巴頓搭機到達後，途中迫降在大街上而與齊塔瑞人近距離交戰，順便跟紐約警察聯手疏散市民。班納與索爾不久後也趕到，班納直接變身成浩克，將齊塔瑞的運輸巨龍一拳打死。洛基下令全軍出動，眾人正式組成復仇者聯盟，擔任隊長的史蒂芬分派完任務後，眾英雄各自開始分頭作戰。娜塔莎想辦法上屋頂，開始和因衝擊而清醒的賽維格合作關閉傳送機器。洛基不僅與索爾打鬥時遺失權杖，還被巴頓用弓箭炸回大樓，還大言不慚地對跳上來的班納斥喝他是神，最後卻被班納打個半死而狼狽落敗。
+
+安理會為了消滅外星威脅，不惜瞞著福瑞而親自命令航母上的一架戰機飛，飛向紐約發射一顆核彈。東尼全速緊握核彈後，將其送進傳送門另一端，順勢摧毀齊塔瑞人的指揮船。剩餘齊塔瑞人集體斃命，東尼因為飛入太空而耗盡能源至停機，但他還是在娜塔莎關閉傳送門前穿過門回到地球，被班納平安救下來後，在其一聲吼叫之下驚醒恢復意識。全軍覆沒的洛基遭全體復仇者抓獲，洛基的權杖則被神盾局回收。戰後，復仇者們在一家餐廳裡靜靜地吃沙威瑪；紐約方面開始收拾殘局、紀念死難者，世界各國都被這次外星入侵事件所震驚。索爾帶著被蒙住嘴的洛基，跟眾人至別後拿著魔方回歸阿斯嘉。東尼與小辣椒將史塔克大樓翻新擴建變成復仇者大樓，其他人也都各奔東西；福瑞對安理會彙報完事情經過後，自信地認為復仇者將來一定會再次拯救世界。
+
+</mutableString>
+                                                <attributes>
+                                                    <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <font key="NSFont" size="20" name=".PingFangTC-Regular"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content="另一方面，洛基背後的主使針對這次入侵地球失敗，對他的「幕後主上」認為他們過於低估人類的團結，但他的主上親自站起來，嘴上還露出尖利的笑容。">
+                                                <attributes>
+                                                    <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <font key="NSFont" size="20" name=".PingFangTC-Regular"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                                <viewLayoutGuide key="contentLayoutGuide" id="vCs-xw-9Lm"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="pdu-Qk-D8N"/>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="nLu-cl-Tu3"/>
+                        <color key="backgroundColor" systemColor="labelColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="h1f-QO-TtV"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UiT-C0-iuY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2205.5999999999999" y="71.514242878560722"/>
+        </scene>
+        <!--角色-->
+        <scene sceneID="6QN-kd-PS6">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8Jf-NI-X4O" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="角色" image="person" catalog="system" id="Pvf-LI-6Mz"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="qPk-Sh-S7M">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BKL-uv-BWs" kind="relationship" relationship="rootViewController" id="5wG-p7-LhC"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KSn-xf-vvI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="364" y="810"/>
+        </scene>
+        <!--角色-->
+        <scene sceneID="TUZ-PC-nbr">
+            <objects>
+                <tableViewController id="BKL-uv-BWs" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Vfj-jJ-yfa">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="mdS-O7-mpl">
+                                <rect key="frame" x="0.0" y="28" width="375" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mdS-O7-mpl" id="Eqj-hL-C6r">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="BKL-uv-BWs" id="kAi-9w-XJO"/>
+                            <outlet property="delegate" destination="BKL-uv-BWs" id="JLU-io-f4a"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="角色" id="A1h-2h-rc7"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SR9-iD-4Cx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1350" y="809"/>
+        </scene>
+        <!--資訊-->
+        <scene sceneID="5RY-3G-Ldl">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="q0K-tS-ZEK" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="資訊" image="info.circle" catalog="system" id="5xR-He-JEU"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="5IP-6x-HOp">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="2mO-mm-qS3" kind="relationship" relationship="rootViewController" id="O7N-6y-rHj"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pZ8-pf-5hf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="364" y="1542"/>
+        </scene>
+        <!--資訊-->
+        <scene sceneID="rxF-l7-b5u">
+            <objects>
+                <tableViewController id="2mO-mm-qS3" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="LE5-Pa-Oxb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Ay6-nC-8Ja">
+                                <rect key="frame" x="0.0" y="28" width="375" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ay6-nC-8Ja" id="hVR-hR-r1l">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="2mO-mm-qS3" id="kE6-jY-IAR"/>
+                            <outlet property="delegate" destination="2mO-mm-qS3" id="RSf-vq-Gf2"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="資訊" id="LYp-ro-Hhy"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3aC-s8-9gG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1350" y="1541"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="3D_Avengers" width="750" height="500"/>
+        <image name="A1" width="472" height="700"/>
+        <image name="A1b" width="1100" height="440"/>
+        <image name="A2" width="264" height="377"/>
+        <image name="A3" width="220" height="326"/>
+        <image name="A4" width="220" height="326"/>
+        <image name="homekit" catalog="system" width="128" height="106"/>
+        <image name="info.circle" catalog="system" width="128" height="121"/>
+        <image name="person" catalog="system" width="128" height="117"/>
+        <image name="video" catalog="system" width="128" height="83"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
