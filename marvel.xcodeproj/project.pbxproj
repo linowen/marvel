@@ -13,6 +13,7 @@
 		B96A48E5255A6D8D0095ADE6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B96A48E3255A6D8D0095ADE6 /* Main.storyboard */; };
 		B96A48E7255A6D900095ADE6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B96A48E6255A6D900095ADE6 /* Assets.xcassets */; };
 		B96A48EA255A6D900095ADE6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B96A48E8255A6D900095ADE6 /* LaunchScreen.storyboard */; };
+		B9F98F9425FA361D00472A71 /* first.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9F98F9225FA361D00472A71 /* first.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		B96A48E6255A6D900095ADE6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B96A48E9255A6D900095ADE6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B96A48EB255A6D900095ADE6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B9F98F9325FA361D00472A71 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = marvel/Base.lproj/first.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 		B96A48DC255A6D8D0095ADE6 /* marvel */ = {
 			isa = PBXGroup;
 			children = (
+				B9F98F9225FA361D00472A71 /* first.storyboard */,
 				B96A48DD255A6D8D0095ADE6 /* AppDelegate.swift */,
 				B96A48DF255A6D8D0095ADE6 /* SceneDelegate.swift */,
 				B96A48E1255A6D8D0095ADE6 /* ViewController.swift */,
@@ -127,6 +130,7 @@
 				B96A48EA255A6D900095ADE6 /* LaunchScreen.storyboard in Resources */,
 				B96A48E7255A6D900095ADE6 /* Assets.xcassets in Resources */,
 				B96A48E5255A6D8D0095ADE6 /* Main.storyboard in Resources */,
+				B9F98F9425FA361D00472A71 /* first.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -160,6 +164,14 @@
 				B96A48E9255A6D900095ADE6 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		B9F98F9225FA361D00472A71 /* first.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B9F98F9325FA361D00472A71 /* Base */,
+			);
+			name = first.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
